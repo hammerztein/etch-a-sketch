@@ -5,6 +5,32 @@
 	<title>Etch-A-Sketch</title>
 	<link rel="stylesheet" href="./styles.css" />
 	<body>
+		<main>
+			<aside class="controls">
+				<!-- Custom color -->
+				<div class="control-flex">
+					<label for="color-picker">Choose A Color:</label>
+					<input type="color" id="color-picker" value="#00000" />
+				</div>
+				<!-- RNG color -->
+				<div class="control-flex">
+					<label for="rainbow-colors">Rainbow Colors</label>
+					<input type="checkbox" name="rainbow-color" id="rainbow-colors" />
+				</div>
+				<!-- Grid size -->
+				<div class="control-flex">
+					<label for="grid-size"> Choose Grid Size: </label>
+					<input
+						type="range"
+						name="grid-size"
+						id="grid-size"
+						min="2"
+						max="100"
+						value="2"
+					/>
+				</div>
+			</aside>
+		</main>
 		<script src="./app.js"></script>
 	</body>
 </html>
