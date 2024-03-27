@@ -95,6 +95,26 @@ input[type='checkbox']:checked:before {
 	left: 14px;
 }
 
+/* Custom Color Input */
+input[type='color'] {
+	-webkit-appearance: none; /* remove default appearances across all browsers */
+	-moz-appearance: none; /* remove default appearances across all browsers */
+	appearance: none; /* remove default appearances across all browsers */
+	background: none;
+	border: none;
+	width: 30px;
+	height: 20px;
+}
+
+/* Inside Of Input */
+input[type='color']::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+
+input[type='color']::-webkit-color-swatch {
+	border-radius: 20px;
+}
+
 /* Grid Container */
 .grid-container {
 	flex: 3;
