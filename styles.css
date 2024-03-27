@@ -13,3 +13,12 @@ body {
 	align-items: center;
 	justify-content: center;
 }
+
+main {
+	/* border: 1px solid #000; for easier debugging */
+	width: 1180px;
+	height: 660px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+	border: 1px solid #ddd;
+	border-radius: 3px;
+}
