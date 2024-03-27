@@ -59,6 +59,42 @@ main {
 	cursor: pointer;
 }
 
+/* Reset Default Checkbox Style */
+input[type='checkbox'] {
+	-webkit-appearance: none; /* remove default appearances across all browsers */
+	-moz-appearance: none; /* remove default appearances across all browsers */
+	appearance: none; /* remove default appearances across all browsers */
+	width: 30px;
+	height: 18px;
+	position: relative;
+	border-radius: 50px;
+	background-color: #b9b7d4;
+	transition: all 0.3s ease;
+}
+
+/* Toggle Switch Circle */
+input[type='checkbox']:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 14px;
+	height: 14px;
+	background: #eee;
+	left: 2px;
+	top: 2px;
+	border-radius: 50%;
+	transition: all 0.3s ease;
+}
+
+/* Checked State */
+input[type='checkbox']:checked {
+	background-color: #707070;
+}
+
+input[type='checkbox']:checked:before {
+	left: 14px;
+}
+
 /* Grid Container */
 .grid-container {
 	flex: 3;
