@@ -26,13 +26,13 @@ main {
 
 /* Sketch Controls */
 .controls {
-	padding: 20px 10px;
+	padding: 20px 12px;
 	flex: 1;
 	border-right: 1px solid #ddd;
 }
 
 .control-flex {
-	padding: 8px;
+	padding: 8px 12px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -40,6 +40,7 @@ main {
 	border-radius: 5px;
 	transition: all 0.2s ease-in-out;
 	opacity: 0.75;
+	gap: 12px
 }
 
 .control-flex:not(:last-of-type) {
