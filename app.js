@@ -5,6 +5,24 @@ const colorInput = document.querySelector('#color-picker');
 
 // Global Variables
 let currentColor = colorInput.value;
+const hexValues = [
+	'0',
+	'1',
+	'2',
+	'3',
+	'4',
+	'5',
+	'6',
+	'7',
+	'8',
+	'9',
+	'A',
+	'B',
+	'C',
+	'D',
+	'E',
+	'F',
+];
 
 // Create grid via flexbox
 function drawGrid(event) {
@@ -44,6 +62,12 @@ function pickColor(event) {
 
 	// Set currentColor to the new value
 	currentColor = elementValue;
+}
+
+// Generate random hexadecimal value
+function generateRandomHexValue(maxNumber) {
+	let randomNumber = Math.floor(Math.random() * maxNumber);
+	return hexValues[randomNumber];
 }
 
 // Event listeners
