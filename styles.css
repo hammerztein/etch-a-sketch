@@ -16,7 +16,7 @@ body {
 
 main {
 	/* border: 1px solid #000; for easier debugging */
-	width: 1000px;
+	width: 830px;
 	height: 560px;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 	border: 1px solid #ddd;
@@ -139,9 +139,8 @@ input[type='range']::-webkit-slider-thumb {
 
 /* Grid Container */
 .grid-container {
-	flex: 3;
 	display: flex;
-	height: 100%;
+	aspect-ratio: 1/1;
 }
 
 .column {
