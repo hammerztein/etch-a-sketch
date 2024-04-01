@@ -4,7 +4,7 @@ const gridInput = document.querySelector('#grid-size');
 const colorInput = document.querySelector('#color-picker');
 
 // Global Variables
-const currentColor = colorInput.value;
+let currentColor = colorInput.value;
 
 // Create grid via flexbox
 function drawGrid(event) {
@@ -37,7 +37,18 @@ function colorElement(event) {
 	element.style.backgroundColor = currentColor;
 }
 
+// Pick a color
+function pickColor(event) {
+	// Get current element value
+	const elementValue = event.target.value;
+
+	// Set currentColor to the new value
+	currentColor = elementValue;
+}
+
 // Event listeners
 gridInput.addEventListener('change', (e) => drawGrid(e));
 
 gridContainer.addEventListener('mouseover', (e) => colorElement(e));
+
+colorInput.addEventListener('change', pickColor);
