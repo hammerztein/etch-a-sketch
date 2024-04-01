@@ -2,6 +2,7 @@
 const gridContainer = document.querySelector('.grid-container');
 const gridInput = document.querySelector('#grid-size');
 const colorInput = document.querySelector('#color-picker');
+const rainbowInput = document.querySelector('#rainbow-colors');
 
 // Global Variables
 let currentColor = colorInput.value;
@@ -23,6 +24,7 @@ const hexValues = [
 	'E',
 	'F',
 ];
+let rainbowMode = false;
 
 // Create grid via flexbox
 function drawGrid(event) {
@@ -50,18 +52,19 @@ function drawGrid(event) {
 function colorElement(event) {
 	// Get current element
 	const element = event.target;
-
+	// If rainbow mode not enabled proceed with picked color
+	if (rainbowMode) {
+		// Clear currentColor
+		currentColor = '#';
+		// Generate random hexadecimal color value
+		for (let i = 1; i <= 6; i++) {
+			currentColor += generateRandomHexValue(hexValues.length);
+		}
+	} else {
+		currentColor = colorInput.value;
+	}
 	// Apply background color
-	element.style.backgroundColor = currentColor;
-}
-
-// Pick a color
-function pickColor(event) {
-	// Get current element value
-	const elementValue = event.target.value;
-
-	// Set currentColor to the new value
-	currentColor = elementValue;
+	element.style.backgroundColor = `${currentColor}`;
 }
 
 // Generate random hexadecimal value
@@ -70,9 +73,14 @@ function generateRandomHexValue(maxNumber) {
 	return hexValues[randomNumber];
 }
 
+// Toggle rainbow mode ON/OFF
+function toggleRainbowMode() {
+	rainbowMode = !rainbowMode;
+}
+
 // Event listeners
 gridInput.addEventListener('change', (e) => drawGrid(e));
 
 gridContainer.addEventListener('mouseover', (e) => colorElement(e));
 
-colorInput.addEventListener('change', pickColor);
+rainbowInput.addEventListener('change', toggleRainbowMode);
