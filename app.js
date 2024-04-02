@@ -31,7 +31,7 @@ let darkeningMode = false;
 // Create grid via flexbox
 function drawGrid(event) {
 	// Get range value
-	const size = event.target.value;
+	const size = gridInput.value;
 
 	// Clear grid container
 	gridContainer.innerHTML = '';
@@ -71,7 +71,9 @@ function colorElement(event) {
 		// Set color to black and increment opacity as needed
 		currentColor = '#000000';
 		element.style.opacity = element.dataset.opacity / 10;
-		element.style.opacity < 1 ? element.dataset.opacity++ : element.style.opacity;
+		element.style.opacity < 1
+			? element.dataset.opacity++
+			: element.style.opacity;
 	} else {
 		// No modes are active use input color
 		currentColor = colorInput.value;
@@ -102,7 +104,7 @@ function toggleDarkening() {
 }
 
 // Event listeners
-gridInput.addEventListener('change', (e) => drawGrid(e));
+gridInput.addEventListener('change', drawGrid);
 
 gridContainer.addEventListener('mouseover', (e) => {
 	// Event triggers mouseover on parent due to padding & border, negate it
@@ -115,3 +117,6 @@ gridContainer.addEventListener('mouseover', (e) => {
 rainbowInput.addEventListener('change', toggleRainbow);
 
 drakeningInput.addEventListener('change', toggleDarkening);
+
+// Draw initial grid of 16x16
+drawGrid();
