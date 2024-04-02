@@ -3,6 +3,7 @@ const gridContainer = document.querySelector('.grid-container');
 const gridInput = document.querySelector('#grid-size');
 const colorInput = document.querySelector('#color-picker');
 const rainbowInput = document.querySelector('#rainbow-colors');
+const drakeningInput = document.querySelector('#darkening');
 
 // Global Variables
 let currentColor = colorInput.value;
@@ -25,6 +26,7 @@ const hexValues = [
 	'F',
 ];
 let rainbowMode = false;
+let darkeningMode = false;
 
 // Create grid via flexbox
 function drawGrid(event) {
@@ -73,9 +75,19 @@ function generateRandomHexValue(maxNumber) {
 	return hexValues[randomNumber];
 }
 
+// Toggle modes
+function toggleMode(modeName) {
+	return !modeName;
+}
+
 // Toggle rainbow mode ON/OFF
-function toggleRainbowMode() {
-	rainbowMode = !rainbowMode;
+function toggleRainbow() {
+	rainbowMode = toggleMode(rainbowMode);
+}
+
+// Toggle darkening mode ON/OFF
+function toggleDarkening() {
+	darkeningMode = toggleMode(darkeningMode);
 }
 
 // Event listeners
@@ -83,4 +95,6 @@ gridInput.addEventListener('change', (e) => drawGrid(e));
 
 gridContainer.addEventListener('mouseover', (e) => colorElement(e));
 
-rainbowInput.addEventListener('change', toggleRainbowMode);
+rainbowInput.addEventListener('change', toggleRainbow);
+
+drakeningInput.addEventListener('change', toggleDarkening);
