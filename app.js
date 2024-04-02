@@ -43,6 +43,7 @@ function drawGrid(event) {
 		for (let j = 1; j <= size; j++) {
 			const row = document.createElement('div');
 			row.className = 'row';
+			row.setAttribute('data-opacity', 0);
 			column.appendChild(row);
 		}
 		// Append new grid into container
@@ -58,15 +59,25 @@ function colorElement(event) {
 	if (rainbowMode) {
 		// Clear currentColor
 		currentColor = '#';
+		// Clear opacity
+		element.style.opacity = 1;
 		// Generate random hexadecimal color value
 		for (let i = 1; i <= 6; i++) {
 			currentColor += generateRandomHexValue(hexValues.length);
 		}
+	} else if (darkeningMode) {
+		// Clear opacity
+		element.style.opacity = 0;
+		// Set color to black and increment opacity as needed
+		currentColor = '#000000';
+		element.style.opacity = element.dataset.opacity / 10;
+		element.style.opacity < 1 ? element.dataset.opacity++ : element.style.opacity;
 	} else {
+		// No modes are active use input color
 		currentColor = colorInput.value;
 	}
 	// Apply background color
-	element.style.backgroundColor = `${currentColor}`;
+	element.style.backgroundColor = currentColor;
 }
 
 // Generate random hexadecimal value
