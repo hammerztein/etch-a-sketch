@@ -104,7 +104,13 @@ function toggleDarkening() {
 // Event listeners
 gridInput.addEventListener('change', (e) => drawGrid(e));
 
-gridContainer.addEventListener('mouseover', (e) => colorElement(e));
+gridContainer.addEventListener('mouseover', (e) => {
+	// Event triggers mouseover on parent due to padding & border, negate it
+	if (e.target === gridContainer) {
+		return;
+	}
+	colorElement(e);
+});
 
 rainbowInput.addEventListener('change', toggleRainbow);
 
