@@ -1,54 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Etch-A-Sketch</title>
-  <link rel="stylesheet" href="./styles.css" />
-  <body>
-    <main>
-      <aside class="controls">
-        <!-- Custom color -->
-        <div class="control-flex">
-          <label for="color-picker">Pick A Color:</label>
-          <input type="color" id="color-picker" value="#000000" />
-        </div>
-        <!-- RNG color -->
-        <div class="control-flex">
-          <label for="rainbow-colors">Rainbow Colors</label>
-          <input type="checkbox" name="rainbow-color" id="rainbow-colors" />
-        </div>
-        <!-- Progressive Darkening -->
-        <div class="control-flex">
-          <label for="darkening">Progressive Darkening</label>
-          <input type="checkbox" name="darkening" id="darkening" />
-        </div>
-        <!-- Grid size -->
-        <div class="control-flex">
-          <label for="grid-size">Grid Size: </label>
-          <input
-            type="range"
-            name="grid-size"
-            id="grid-size"
-            min="2"
-            max="100"
-            value="2"
-          />
-        </div>
-      </aside>
-      <!-- Grid container -->
-      <section class="grid-container">
-        <!-- Fill with rows/columns via JavaScript -->
-        <!-- Initial 2x2 grid placeholder -->
-        <div class="column">
-          <div class="row"></div>
-          <div class="row"></div>
-        </div>
-        <div class="column">
-          <div class="row"></div>
-          <div class="row"></div>
-        </div>
-      </section>
-    </main>
-    <script src="./app.js"></script>
-  </body>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Etch-A-Sketch</title>
+	<link rel="stylesheet" href="./styles.css" />
+	<body>
+		<main>
+			<aside class="controls">
+				<!-- Custom color -->
+				<div class="control-flex">
+					<label for="color-picker">Pick A Color:</label>
+					<input type="color" id="color-picker" value="#000000" />
+				</div>
+				<!-- RNG color -->
+				<div class="control-flex">
+					<label for="rainbow-colors">Rainbow Colors</label>
+					<input type="checkbox" name="rainbow-color" id="rainbow-colors" />
+				</div>
+				<!-- Progressive Darkening -->
+				<div class="control-flex">
+					<label for="darkening">Progressive Darkening</label>
+					<input type="checkbox" name="darkening" id="darkening" />
+				</div>
+				<!-- Grid size -->
+				<div class="control-flex">
+					<label for="grid-size">Grid Size: </label>
+					<input
+						type="range"
+						name="grid-size"
+						id="grid-size"
+						min="2"
+						max="100"
+						value="2"
+					/>
+				</div>
+			</aside>
+			<!-- Grid container -->
+			<section class="grid-container">
+				<!-- Fill with rows/columns via JavaScript -->
+				<!-- Initial 2x2 grid placeholder -->
+				<div class="column">
+					<div class="row"></div>
+					<div class="row"></div>
+				</div>
+				<div class="column">
+					<div class="row"></div>
+					<div class="row"></div>
+				</div>
+			</section>
+		</main>
+		<script src="./app.js"></script>
+	</body>
 </html>
