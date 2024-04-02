@@ -15,20 +15,15 @@ body {
 }
 
 main {
-	/* border: 1px solid #000; for easier debugging */
-	width: 830px;
+	width: 860px;
 	height: 560px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-	border: 1px solid #ddd;
-	border-radius: 3px;
 	display: flex;
+	gap: 22px
 }
 
 /* Sketch Controls */
 .controls {
-	padding: 20px 12px;
 	flex: 1;
-	border-right: 1px solid #ddd;
 }
 
 .control-flex {
@@ -141,6 +136,11 @@ input[type='range']::-webkit-slider-thumb {
 .grid-container {
 	display: flex;
 	aspect-ratio: 1/1;
+	padding: 18px;
+	background-color: #dedcff;
+	box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.15);
+	border: 1px solid #ddd;
+	border-radius: 3px;
 }
 
 .column {
@@ -150,6 +150,6 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .row {
-	border: 1px solid #000; /* placeholder for visibility */
-	flex: 1; /* always take max size */
+	background-color: #fefefe;
+	flex: 1;
 }
