@@ -56,6 +56,10 @@ function drawGrid(event) {
 function colorElement(event) {
 	// Get current element
 	const element = event.target;
+	// Negate firing the event on parent due to padding/border
+	if (element === gridContainer) {
+		return;
+	}
 	// Reset opacity and dataset if mode not active
 	if (!darkeningMode) {
 		element.dataset.opacity = 0;
@@ -118,13 +122,7 @@ function toggleDarkening() {
 // Event listeners
 gridInput.addEventListener('change', drawGrid);
 
-gridContainer.addEventListener('mouseover', (e) => {
-	// Event triggers mouseover on parent due to padding & border, negate it
-	if (e.target === gridContainer) {
-		return;
-	}
-	colorElement(e);
-});
+gridContainer.addEventListener('mouseover', colorElement);
 
 rainbowInput.addEventListener('change', toggleRainbow);
 
