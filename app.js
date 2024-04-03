@@ -97,11 +97,21 @@ function toggleMode(modeName) {
 // Toggle rainbow mode ON/OFF
 function toggleRainbow() {
 	rainbowMode = toggleMode(rainbowMode);
+	// Enable only 1 active mode
+	if (darkeningMode) {
+		darkeningInput.checked = false;
+		darkeningMode = toggleMode(darkeningMode);
+	}
 }
 
 // Toggle darkening mode ON/OFF
 function toggleDarkening() {
 	darkeningMode = toggleMode(darkeningMode);
+	// Enable only 1 active mode
+	if (rainbowMode) {
+		rainbowInput.checked = false;
+		rainbowMode = toggleMode(rainbowMode);
+	}
 }
 
 // Event listeners
