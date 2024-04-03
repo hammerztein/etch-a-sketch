@@ -39,16 +39,16 @@ function drawGrid(event) {
 
 	// Create column
 	for (let i = 1; i <= size; i++) {
-		const column = document.createElement('div');
-		column.className = 'column';
+		const row = document.createElement('div');
+		row.className = 'row';
 		for (let j = 1; j <= size; j++) {
-			const row = document.createElement('div');
-			row.className = 'row';
-			row.setAttribute('data-opacity', 0);
-			column.appendChild(row);
+			const column = document.createElement('div');
+			column.className = 'column';
+			column.setAttribute('data-opacity', 0);
+			row.appendChild(column);
 		}
 		// Append new grid into container
-		gridContainer.appendChild(column);
+		gridContainer.appendChild(row);
 	}
 }
 
