@@ -56,27 +56,28 @@ function drawGrid(event) {
 function colorElement(event) {
 	// Get current element
 	const element = event.target;
+	// Reset opacity and dataset if mode not active
+	if (!darkeningMode) {
+		element.dataset.opacity = 0;
+		element.style.opacity = 1;
+	}
 	// If rainbow mode not enabled proceed with picked color
 	if (rainbowMode) {
 		// Clear currentColor
 		currentColor = '#';
-		// Clear opacity
-		element.style.opacity = 1;
 		// Generate random hexadecimal color value
 		for (let i = 1; i <= 6; i++) {
 			currentColor += generateRandomHexValue(hexValues.length);
 		}
 	} else if (darkeningMode) {
-		// Clear opacity
-		element.style.opacity = 0;
-		// Set color to black and increment opacity as needed
+		// Shading logic over 10 iterations
 		currentColor = '#000000';
 		element.style.opacity = element.dataset.opacity / 10;
 		element.style.opacity < 1
 			? element.dataset.opacity++
 			: element.style.opacity;
 	} else {
-		// No modes are active use input color
+		// No modes are active - use picked color
 		currentColor = colorInput.value;
 	}
 	// Apply background color
