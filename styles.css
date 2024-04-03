@@ -5,6 +5,12 @@
 	box-sizing: border-box; /* include padding and border into elements total sizing */
 }
 
+button {
+	outline: none;
+	border: none;
+	background: none;
+}
+
 body {
 	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
 		Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -49,12 +55,14 @@ main {
 	box-shadow: 1px 2px 4px 2px rgba(0, 0, 0, 0.15);
 }
 
-.control-flex label {
+.control-flex label,
+.control-flex button {
 	flex: 1;
 }
 
 .control-flex label,
-.control-flex input {
+.control-flex input,
+.control-flex button {
 	cursor: pointer;
 }
 
@@ -132,6 +140,12 @@ input[type='range']::-webkit-slider-thumb {
 	height: 20px;
 	background-color: #707070;
 	border-radius: 5px;
+}
+
+/* Button */
+#reset {
+	font-size: 16px;
+	text-transform: uppercase;
 }
 
 /* Grid Container */

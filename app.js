@@ -4,6 +4,7 @@ const gridInput = document.querySelector('#grid-size');
 const colorInput = document.querySelector('#color-picker');
 const rainbowInput = document.querySelector('#rainbow-colors');
 const drakeningInput = document.querySelector('#darkening');
+const resetButton = document.querySelector('#reset');
 
 // Global Variables
 let currentColor = colorInput.value;
@@ -117,6 +118,8 @@ gridContainer.addEventListener('mouseover', (e) => {
 rainbowInput.addEventListener('change', toggleRainbow);
 
 drakeningInput.addEventListener('change', toggleDarkening);
+
+resetButton.addEventListener('click', drawGrid);
 
 // Draw initial grid of 16x16
 drawGrid();
