@@ -7,8 +7,8 @@ Simple and clean Etch-A-Sketch like project built for [The Odin Project](https:/
 - Create a webpage with a 16x16 grid of square divs using JavaScript and flexbox.
 - Set up a hover effect on each of the squares that will change color when mousing over them.
 - Add user input that will change grid size.
-- Add a feature to randomize square color on each interaction - `Additional`
-- Add a progressive darkening/shading effect where each iteration will darken the square by 10% - `Additional`
+- Add a feature to randomize square color on each interaction. - `Additional`
+- Add a progressive darkening/shading effect where each iteration will darken the square by 10%. - `Additional`
 
 ## Links
 
@@ -29,11 +29,13 @@ Simple and clean Etch-A-Sketch like project built for [The Odin Project](https:/
 - Event listeners `mouseover` and `change`.
 - How to apply toggle effect utilizing boolean logic.
 - How to split up functions into smaller sub-functions - to make code easier to read and maintain.
-- Event delegation - instead of attaching event listener on each of the squares, attach only one on the parent
+- Event delegation - instead of attaching event listener on each of the squares, attach only one on the parent.
 
 ## To-Dos
 
-- Responsive design
+- Responsive design.
+- Add an erase square color functionality on right mouse click.
+- Add a toggle event type functionality between `mouseover` and `click`.
 
 ## Resources I Used
 
