@@ -60,11 +60,13 @@ function colorElement(event) {
 	if (element === gridContainer) {
 		return;
 	}
-	// Reset opacity and dataset if mode not active
-	if (!darkeningMode) {
-		element.dataset.opacity = 0;
-		element.style.opacity = 1;
-	}
+	// If darkMode is off, reset opacity properites
+	resetOpacity(element);
+	// Apply color(s) to the currentColor
+	applyColor(element);
+}
+
+function applyColor(element) {
 	// If rainbow mode not enabled proceed with picked color
 	if (rainbowMode) {
 		// Clear currentColor
@@ -86,6 +88,14 @@ function colorElement(event) {
 	}
 	// Apply background color
 	element.style.backgroundColor = currentColor;
+}
+
+// Reset opacity properties
+function resetOpacity(element) {
+	if (!darkeningMode) {
+		element.dataset.opacity = 0;
+		element.style.opacity = 1;
+	}
 }
 
 // Generate random hexadecimal value
