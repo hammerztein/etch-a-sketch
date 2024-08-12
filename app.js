@@ -29,26 +29,19 @@ const hexValues = [
 let rainbowMode = false;
 let darkeningMode = false;
 
-// Create grid via flexbox
+// Create grid
 function drawGrid(event) {
 	// Get range value
 	const size = gridInput.value;
-
 	// Clear grid container
 	gridContainer.innerHTML = '';
-
-	// Create column
-	for (let i = 1; i <= size; i++) {
-		const row = document.createElement('div');
-		row.className = 'row';
-		for (let j = 1; j <= size; j++) {
-			const column = document.createElement('div');
-			column.className = 'column';
-			column.setAttribute('data-opacity', 0);
-			row.appendChild(column);
-		}
-		// Append new grid into container
-		gridContainer.appendChild(row);
+	// Create grid
+	gridContainer.style.gridTemplate = `repeat(${size}, 1fr) / repeat(${size}, 1fr)`;
+	for (let i = 1; i <= size * size; i++) {
+		const gridCell = document.createElement('div');
+		gridCell.className = 'cell';
+		gridCell.setAttribute('data-opacity', 0);
+		gridContainer.appendChild(gridCell);
 	}
 }
 
@@ -57,7 +50,7 @@ function colorElement(event) {
 	// Get current element
 	const element = event.target;
 	// Negate firing the event on parent due to padding/border
-	if (element === gridContainer) {
+	if (!element.matches('.cell')) {
 		return;
 	}
 	// If darkMode is off, reset opacity properites
